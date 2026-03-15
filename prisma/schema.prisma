@@ -1,0 +1,24 @@
+datasource db {
+    provider = "postgresql"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Todo {
+    id String @id @default(uuid())
+    title String
+    description String?
+    status String
+    priority String
+    tags String[]
+    endDate DateTime
+    startDate DateTime
+    email String
+    phone String
+    categories String[]
+    color String
+    createdAt DateTime @default(now())
+    modifiedAt DateTime @updatedAt
+}
