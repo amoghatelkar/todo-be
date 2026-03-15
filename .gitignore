@@ -35,4 +35,4 @@ Thumbs.db
 .idea/
 
 # Package lock (keep one, ignore the other based on your preference)
-yarn.lock
+yarn.lockpackage-lock.json
