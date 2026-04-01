@@ -65,7 +65,7 @@ jobs:
           EB_APPLICATION_NAME: ${{ vars.EB_APPLICATION_NAME }}
           EB_ENVIRONMENT_NAME: ${{ vars.EB_ENVIRONMENT_NAME }}
         run: |
-          VERSION_LABEL="${GITHUB_SHA::7}-${GITHUB_RUN_NUMBER}"
+          VERSION_LABEL="${GITHUB_SHA::7}-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
           ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text)"
           EB_BUCKET="elasticbeanstalk-${AWS_REGION}-${ACCOUNT_ID}"
           S3_KEY="${EB_APPLICATION_NAME}/${VERSION_LABEL}.zip"
